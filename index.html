@@ -81,8 +81,8 @@
 
   /* 卡牌区域 */
   .grid {
-    display: grid; grid-template-columns: repeat(5, 1fr);
-    gap: clamp(8px, 1.6vw, 18px);
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: clamp(14px, 2vw, 26px);
     width: min(1200px, 96vw);
     perspective: 1600px;
   }
@@ -109,7 +109,7 @@
     backface-visibility: hidden; -webkit-backface-visibility: hidden;
     border-radius: clamp(10px, 1.6vw, 18px);
     display: flex; flex-direction: column; align-items: center; justify-content: center;
-    padding: clamp(8px, 1.4vw, 18px);
+    padding: clamp(12px, 2.2vw, 28px);
     box-shadow: 0 18px 34px rgba(0,0,0,.5);
   }
 
@@ -163,12 +163,12 @@
   }
   .front .q-label {
     font-size: clamp(8px, 1vw, 11px); letter-spacing: 2px;
-    color: var(--gold); font-weight: 700; margin-bottom: clamp(6px, 1vw, 12px);
+    color: var(--gold); font-weight: 700; margin-bottom: clamp(10px, 1.6vw, 18px);
     text-align: center;
   }
   .front .q {
-    font-size: clamp(11px, 2.5vmin, 22px);
-    font-weight: 800; line-height: 1.5; text-align: center;
+    font-size: clamp(12px, 2.8vmin, 24px);
+    font-weight: 800; line-height: 1.65; text-align: center;
   }
   .front .q span {
     display: inline-block; opacity: 0;
@@ -176,10 +176,10 @@
   }
   /* 追问区 */
   .sub-q {
-    margin-top: clamp(6px, 1vw, 12px);
+    margin-top: clamp(12px, 1.8vw, 20px);
     width: 100%;
     border-top: 1px dashed rgba(217,169,92,.45);
-    padding-top: clamp(5px, 0.8vw, 9px);
+    padding-top: clamp(9px, 1.4vw, 14px);
     text-align: center;
   }
   .sub-q-title {
@@ -187,15 +187,15 @@
     letter-spacing: 2px;
     color: var(--gold);
     font-weight: 700;
-    margin-bottom: 4px;
+    margin-bottom: 7px;
   }
   .sub-q-item {
-    font-size: clamp(9px, 1.6vmin, 13px);
-    line-height: 1.45;
+    font-size: clamp(9px, 1.7vmin, 13px);
+    line-height: 1.65;
     color: #8a6a3a;
     font-weight: 600;
   }
-  .sub-q-item + .sub-q-item { margin-top: 3px; }
+  .sub-q-item + .sub-q-item { margin-top: 6px; }
   @keyframes charIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
 
   /* 结束提示 */
