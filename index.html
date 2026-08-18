@@ -25,7 +25,7 @@
     background: radial-gradient(1200px 800px at 50% -10%, var(--bg2), var(--bg1));
     color: var(--cream);
     display: flex; flex-direction: column; align-items: center;
-    height: 100vh; padding: clamp(10px, 1.6vw, 24px);
+    height: 100vh; padding: clamp(6px, 1vw, 14px);
     user-select: none; overflow: hidden;
   }
 
@@ -44,13 +44,13 @@
   .header, .progress, .grid, .controls { position: relative; z-index: 1; }
 
   /* 顶部标题 */
-  .header { text-align: center; margin-bottom: clamp(6px, 1.2vh, 14px); flex: none; animation: fadeDown .8s ease both; }
+  .header { text-align: center; margin-bottom: clamp(4px, 0.8vh, 10px); flex: none; animation: fadeDown .8s ease both; }
   .header .sub {
-    font-size: clamp(11px, 1.6vw, 15px); letter-spacing: 4px; color: var(--gold);
-    margin-bottom: 8px; font-weight: 600;
+    font-size: clamp(10px, 1.4vw, 14px); letter-spacing: 4px; color: var(--gold);
+    margin-bottom: 6px; font-weight: 600;
   }
   .header h1 {
-    font-size: clamp(22px, 3.6vw, 42px); font-weight: 800; letter-spacing: 2px;
+    font-size: clamp(20px, 3.2vw, 36px); font-weight: 800; letter-spacing: 2px;
     background: linear-gradient(110deg, var(--gold) 0%, var(--gold-light) 30%, #fff2cf 50%, var(--gold-light) 70%, var(--gold) 100%);
     background-size: 220% 100%;
     -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
@@ -58,13 +58,13 @@
   }
   @keyframes shimmer { 0% { background-position: 220% 0; } 100% { background-position: -220% 0; } }
   .header .hint {
-    margin-top: 4px; font-size: clamp(10px, 1.2vw, 13px); color: var(--muted);
+    margin-top: 3px; font-size: clamp(9px, 1.1vw, 12px); color: var(--muted);
   }
 
   /* 进度条 */
   .progress {
     display: flex; align-items: center; gap: 12px; flex: none;
-    margin-bottom: clamp(6px, 1.2vh, 12px);
+    margin-bottom: clamp(4px, 0.8vh, 8px);
   }
   .progress .text { font-size: clamp(13px, 1.7vw, 16px); color: var(--muted); letter-spacing: 1px; }
   .progress .text b { color: var(--gold-light); font-size: 1.3em; }
@@ -81,16 +81,14 @@
 
   /* 卡牌区域 */
   .grid {
-    flex: 1; min-height: 0; width: min(1500px, 98vw);
+    flex: 1; min-height: 0; width: min(1050px, 94vw);
     display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(2, 1fr);
-    gap: clamp(12px, 1.8vh, 24px);
+    gap: clamp(12px, 1.6vh, 20px);
     perspective: 1600px;
   }
 
   .card {
     position: relative; cursor: pointer;
-    aspect-ratio: 3 / 4; height: 100%; max-width: 100%;
-    justify-self: center;
     -webkit-tap-highlight-color: transparent;
     animation: cardIn .6s cubic-bezier(.2, .9, .4, 1) both;
   }
@@ -111,7 +109,7 @@
     backface-visibility: hidden; -webkit-backface-visibility: hidden;
     border-radius: clamp(10px, 1.6vw, 18px);
     display: flex; flex-direction: column; align-items: center; justify-content: center;
-    padding: clamp(10px, 1.6vw, 20px);
+    padding: clamp(10px, 1.8vw, 22px);
     box-shadow: 0 18px 34px rgba(0,0,0,.5);
   }
 
@@ -169,7 +167,7 @@
     text-align: center;
   }
   .front .q {
-    font-size: clamp(12px, 2.2vmin, 19px);
+    font-size: clamp(13px, 2.6vmin, 22px);
     font-weight: 800; line-height: 1.55; text-align: center;
   }
   .front .q span {
@@ -192,7 +190,7 @@
     margin-bottom: 7px;
   }
   .sub-q-item {
-    font-size: clamp(9px, 1.5vmin, 12px);
+    font-size: clamp(9px, 1.6vmin, 13px);
     line-height: 1.55;
     color: #8a6a3a;
     font-weight: 600;
@@ -210,10 +208,10 @@
   .done .small { display: block; margin-top: 8px; font-size: clamp(12px, 1.5vw, 15px); font-weight: 500; color: var(--muted); }
 
   /* 按钮 */
-  .controls { margin-top: clamp(6px, 1.4vh, 14px); flex: none; display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+  .controls { margin-top: clamp(4px, 1vh, 10px); flex: none; display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
   .btn {
     font-family: inherit; font-size: clamp(13px, 1.7vw, 16px); font-weight: 700; letter-spacing: 1px;
-    padding: 11px 26px; border-radius: 999px; border: none; cursor: pointer;
+    padding: 9px 22px; border-radius: 999px; border: none; cursor: pointer;
     transition: transform .15s, box-shadow .2s, opacity .15s;
   }
   .btn:active { transform: scale(.95); }
