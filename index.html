@@ -25,8 +25,8 @@
     background: radial-gradient(1200px 800px at 50% -10%, var(--bg2), var(--bg1));
     color: var(--cream);
     display: flex; flex-direction: column; align-items: center;
-    min-height: 100vh; padding: clamp(14px, 3vw, 32px);
-    user-select: none; overflow-x: hidden;
+    height: 100vh; padding: clamp(10px, 1.6vw, 24px);
+    user-select: none; overflow: hidden;
   }
 
   /* 背景漂浮光点 */
@@ -44,7 +44,7 @@
   .header, .progress, .grid, .controls { position: relative; z-index: 1; }
 
   /* 顶部标题 */
-  .header { text-align: center; margin-bottom: 18px; animation: fadeDown .8s ease both; }
+  .header { text-align: center; margin-bottom: clamp(6px, 1.2vh, 14px); flex: none; animation: fadeDown .8s ease both; }
   .header .sub {
     font-size: clamp(11px, 1.6vw, 15px); letter-spacing: 4px; color: var(--gold);
     margin-bottom: 8px; font-weight: 600;
@@ -58,13 +58,13 @@
   }
   @keyframes shimmer { 0% { background-position: 220% 0; } 100% { background-position: -220% 0; } }
   .header .hint {
-    margin-top: 8px; font-size: clamp(12px, 1.5vw, 14px); color: var(--muted);
+    margin-top: 4px; font-size: clamp(10px, 1.2vw, 13px); color: var(--muted);
   }
 
   /* 进度条 */
   .progress {
-    display: flex; align-items: center; gap: 12px;
-    margin-bottom: clamp(14px, 2.5vw, 24px);
+    display: flex; align-items: center; gap: 12px; flex: none;
+    margin-bottom: clamp(6px, 1.2vh, 12px);
   }
   .progress .text { font-size: clamp(13px, 1.7vw, 16px); color: var(--muted); letter-spacing: 1px; }
   .progress .text b { color: var(--gold-light); font-size: 1.3em; }
@@ -81,14 +81,14 @@
 
   /* 卡牌区域 */
   .grid {
-    display: grid; grid-template-columns: repeat(3, 1fr);
-    gap: clamp(14px, 2vw, 26px);
-    width: min(1200px, 96vw);
+    flex: 1; min-height: 0; width: min(1500px, 98vw);
+    display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(2, 1fr);
+    gap: clamp(10px, 1.6vw, 22px);
     perspective: 1600px;
   }
 
   .card {
-    position: relative; aspect-ratio: 4 / 5; cursor: pointer;
+    position: relative; cursor: pointer;
     -webkit-tap-highlight-color: transparent;
     animation: cardIn .6s cubic-bezier(.2, .9, .4, 1) both;
   }
@@ -200,14 +200,15 @@
 
   /* 结束提示 */
   .done {
-    display: none; text-align: center; margin-top: 16px;
-    font-size: clamp(18px, 2.6vw, 28px); font-weight: 800; color: var(--gold-light);
-    animation: popIn .5s ease both; position: relative; z-index: 2;
+    display: none; text-align: center;
+    font-size: clamp(16px, 2.2vw, 26px); font-weight: 800; color: var(--gold-light);
+    animation: popIn .5s ease both; position: fixed; left: 0; right: 0; bottom: 6vh;
+    z-index: 10; pointer-events: none;
   }
   .done .small { display: block; margin-top: 8px; font-size: clamp(12px, 1.5vw, 15px); font-weight: 500; color: var(--muted); }
 
   /* 按钮 */
-  .controls { margin-top: clamp(14px, 2.5vw, 26px); display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
+  .controls { margin-top: clamp(6px, 1.4vh, 14px); flex: none; display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
   .btn {
     font-family: inherit; font-size: clamp(13px, 1.7vw, 16px); font-weight: 700; letter-spacing: 1px;
     padding: 11px 26px; border-radius: 999px; border: none; cursor: pointer;
@@ -239,7 +240,7 @@
 
   /* 手机竖屏：2 列，问题放大 */
   @media (max-width: 640px) {
-    .grid { grid-template-columns: repeat(2, 1fr); }
+    .grid { grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(3, 1fr); }
     .front .q { font-size: clamp(12px, 3.6vw, 16px); }
     .sub-q-item { font-size: clamp(9px, 3vw, 11px); }
     .confetti { width: 7px; height: 7px; }
