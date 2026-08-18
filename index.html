@@ -82,15 +82,15 @@
   /* 卡牌区域 */
   .grid {
     flex: 1; min-height: 0; width: min(1500px, 98vw);
-    display: flex; flex-wrap: wrap; justify-content: center; align-content: center;
+    display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(2, 1fr);
     gap: clamp(12px, 1.8vh, 24px);
     perspective: 1600px;
   }
 
   .card {
     position: relative; cursor: pointer;
-    aspect-ratio: 3 / 4; height: clamp(150px, 36vh, 480px);
-    align-self: center;
+    aspect-ratio: 3 / 4; height: 100%; max-width: 100%;
+    justify-self: center;
     -webkit-tap-highlight-color: transparent;
     animation: cardIn .6s cubic-bezier(.2, .9, .4, 1) both;
   }
@@ -111,7 +111,7 @@
     backface-visibility: hidden; -webkit-backface-visibility: hidden;
     border-radius: clamp(10px, 1.6vw, 18px);
     display: flex; flex-direction: column; align-items: center; justify-content: center;
-    padding: clamp(12px, 2.2vw, 28px);
+    padding: clamp(10px, 1.6vw, 20px);
     box-shadow: 0 18px 34px rgba(0,0,0,.5);
   }
 
@@ -169,8 +169,8 @@
     text-align: center;
   }
   .front .q {
-    font-size: clamp(12px, 2.8vmin, 24px);
-    font-weight: 800; line-height: 1.65; text-align: center;
+    font-size: clamp(12px, 2.2vmin, 19px);
+    font-weight: 800; line-height: 1.55; text-align: center;
   }
   .front .q span {
     display: inline-block; opacity: 0;
@@ -192,8 +192,8 @@
     margin-bottom: 7px;
   }
   .sub-q-item {
-    font-size: clamp(9px, 1.7vmin, 13px);
-    line-height: 1.65;
+    font-size: clamp(9px, 1.5vmin, 12px);
+    line-height: 1.55;
     color: #8a6a3a;
     font-weight: 600;
   }
@@ -242,8 +242,8 @@
 
   /* 手机竖屏：2 列，问题放大 */
   @media (max-width: 640px) {
-    .card { height: 170px; }
-    .front .q { font-size: clamp(12px, 3.6vw, 16px); }
+    .grid { grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(3, 1fr); }
+    .front .q { font-size: clamp(12px, 3.6vw, 15px); }
     .sub-q-item { font-size: clamp(9px, 3vw, 11px); }
     .confetti { width: 7px; height: 7px; }
   }
